@@ -13,8 +13,6 @@ RUN apt-get update && apt-get install -y \
 
 WORKDIR /app
 
-COPY . /app
-
 RUN mkdir -p /app/export && \
     chown -R 10001:0 /app/export && \
     chmod -R og+rwx /app/export
@@ -22,6 +20,9 @@ RUN mkdir -p /app/export && \
 VOLUME [ "/app/ontology" ]
 
 RUN pip install -r requirements.txt
+
+COPY . /app
+
 EXPOSE 80
 
 HEALTHCHECK CMD curl --fail http://localhost:8501/_stcore/health

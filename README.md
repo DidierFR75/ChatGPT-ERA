@@ -22,7 +22,7 @@ Due to billing restriction on the GPT API, there is no official publicly availab
 
 1. Rename .env-empty to .env and give a value to the empty variables
 2. Build the image `docker build -t era-rinf-chatbot .`
-3. Run the image `docker run -it --env-file ./env -p 8501:8501 era-rinf-chatbot`
+3. Run the image `docker run -it --restart=always --env-file ./env -p 8501:8501 era-rinf-chatbot`
 4. Access the URL displayed in the console to use the Streamlit application.
 5. Enter text into the application to generate and run SPARQL queries.
 
