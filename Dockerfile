@@ -19,6 +19,7 @@ RUN mkdir -p /app/export && \
 
 VOLUME [ "/app/ontology" ]
 
+COPY requirements.txt /app
 RUN pip install -r requirements.txt
 
 COPY . /app
