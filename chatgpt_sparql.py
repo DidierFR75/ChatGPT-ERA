@@ -184,7 +184,7 @@ def execute_sparql_query(endpoint_url, query):
         result = sparql.query().convert()
     except Exception as e:
         print(e)
-        raise e
+        raise f"Exception {e}"
 
     return result
 
