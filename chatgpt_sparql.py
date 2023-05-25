@@ -177,6 +177,7 @@ def generate_sparql_query(user_text, ontology_information):
 
 def execute_sparql_query(endpoint_url, query):
     sparql = SPARQLWrapper(endpoint_url)
+    print(f"Querying: {endpoint_url}\nSPARQL:\n{sparql}")
     sparql.setQuery(query)
     sparql.setReturnFormat(JSON)
     try:
