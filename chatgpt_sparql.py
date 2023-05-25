@@ -179,7 +179,11 @@ def execute_sparql_query(endpoint_url, query):
     sparql = SPARQLWrapper(endpoint_url)
     sparql.setQuery(query)
     sparql.setReturnFormat(JSON)
-    result = sparql.query().convert()
+    try:
+        result = sparql.query().convert()
+    except Exception as e:
+        print(e)
+        raise e
 
     return result
 
