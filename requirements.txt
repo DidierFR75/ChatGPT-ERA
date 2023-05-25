@@ -1,0 +1,6 @@
+altair<5
+streamlit
+openai
+pandas
+SPARQLWrapper
+rdflib
